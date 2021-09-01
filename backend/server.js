@@ -23,6 +23,7 @@ const io = socket(server, {
 io.on("connection", function (socket) {
   console.log("Made socket connection");
   socket.on('test', () => {
-    console.log('test received')
+    console.log('test received');
+    socket.emit('test-received', "received");
   })
 });
