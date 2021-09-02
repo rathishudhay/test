@@ -6,7 +6,7 @@ import io from "socket.io-client";
 
 function App() {
   const [socketReceivedString, setSocketReceivedString] = useState(null);
-  const socket = io.connect('localhost:5000');
+  const socket = io.connect('https://chat-api.rathish.in:5000');
   socket.emit('test');
   socket.on('test-received', (stringToSet) => {
     console.log("received");

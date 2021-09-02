@@ -12,7 +12,9 @@ const server = app.listen(PORT, function () {
 
 // Static files
 app.use(express.static("public"));
-
+app.use('/api', (req, res) => {
+  res.status(200).send('<h1>Working...</h1>')
+})
 // Socket setup
 const io = socket(server, {
   cors: {
